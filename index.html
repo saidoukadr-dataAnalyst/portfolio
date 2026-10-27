@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a111a">
+  <title>Saïd — Portfolio Data Engineering & Data Analysis</title>
+  <meta name="description" content="Saïd, étudiant en 5e année Big Data et Intelligence Artificielle à l'Université Internationale de Rabat. Recherche de stage PFE en data engineering ou data analysis.">
+  <meta property="og:title" content="Saïd — Data Engineering & Data Analysis">
+  <meta property="og:description" content="Étudiant en 5e année à l’UIR. Découvrez mon parcours et mes projets data. À la recherche d’un stage PFE.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div id="editor-bar" class="editor-bar" hidden><div class="wrap editor-toolbar"><span><b>Atelier du portfolio</b><small>Modifications locales : exportez pour mettre le site en ligne à jour.</small></span><div class="actions"><button data-action="profile">Mon profil</button><button data-action="skills">Technologies</button><button data-action="education">Formation</button><button data-action="certifications">Certifications</button><button data-action="export" class="button primary small">Exporter data.js ↗</button><button data-action="exit-editor">Fermer ×</button></div></div></div>
+  <header class="site-header"><div class="wrap nav-row">
+    <a href="#home" class="brand" aria-label="Accueil"><span class="brand-mark">s<span>.</span></span><span><b id="nav-name">Saïd</b><small>DATA & INTELLIGENCE ARTIFICIELLE</small></span></a>
+    <nav id="navigation" aria-label="Navigation principale"><a href="#projects">Projets <span class="nav-dot"></span></a><a href="#stages">Expériences</a><a href="#skills">Compétences</a><a href="#about">Parcours</a></nav>
+    <div class="nav-actions"><a class="button small" href="#contact">Discutons <span aria-hidden="true">↗</span></a><button id="mobile-menu-btn" class="menu-button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navigation">☰</button></div>
+  </div></header>
+  <main id="main">
+    <section id="home" class="hero wrap">
+      <div class="hero-copy"><div class="availability"><span></span><span id="hero-status">À la recherche d’un stage PFE</span></div><p class="eyebrow hero-intro">BONJOUR, MOI C’EST <span id="hero-name">SAÏD</span></p><h1>Des données brutes.<br>Des idées <em>utiles.</em></h1><p class="hero-description" id="hero-bio"></p><div class="hero-actions"><a class="button primary" href="#projects">Explorer mes projets <span aria-hidden="true">↗</span></a><a id="hero-cv" class="button" hidden>Télécharger mon CV <span aria-hidden="true">↓</span></a><a class="text-link" href="#about">Mon parcours <span aria-hidden="true">→</span></a></div><div class="hero-meta"><span><span class="tiny-cross">⌖</span> <span id="hero-location">Rabat, Maroc</span></span><span id="hero-study">5e année · UIR</span></div></div>
+      <div class="data-lab" aria-label="Exploration interactive du parcours de la donnée">
+        <div class="lab-top"><span class="mono"><span class="live-dot"></span> DATA EXPLORER</span><span class="muted mono">01 — 03</span></div><div class="lab-caption"><span class="eyebrow">DE LA SOURCE À LA DÉCISION</span><p>Chaque donnée a<br>quelque chose à raconter<span>.</span></p></div>
+        <div class="data-route" role="group" aria-label="Choisir une étape du parcours data">
+          <button class="route-node active" data-step="0" aria-pressed="true"><span class="node-icon" aria-hidden="true">⛁</span><span><small>01 / COLLECTER</small><b>La donnée brute</b></span><span class="node-arrow" aria-hidden="true">↗</span></button><div class="route-connector" aria-hidden="true"><span></span><small>ingérer · structurer</small></div>
+          <button class="route-node" data-step="1" aria-pressed="false"><span class="node-icon" aria-hidden="true">⌘</span><span><small>02 / TRANSFORMER</small><b>Un système fiable</b></span><span class="node-arrow" aria-hidden="true">↗</span></button><div class="route-connector" aria-hidden="true"><span></span><small>analyser · comprendre</small></div>
+          <button class="route-node" data-step="2" aria-pressed="false"><span class="node-icon" aria-hidden="true">↗</span><span><small>03 / VALORISER</small><b>Une décision éclairée</b></span><span class="node-arrow" aria-hidden="true">↗</span></button>
+        </div><div class="lab-detail" aria-live="polite"><p id="lab-description"></p><a id="lab-link" href="#projects">Explorer les projets associés <span aria-hidden="true">→</span></a></div><div class="lab-bottom"><span class="mono">DATA → INSIGHT → IMPACT</span><span class="signal" aria-hidden="true">▂ ▅ ▃ ▇ ▅ ▂</span></div>
+      </div>
+    </section>
+    <div class="wrap"><div class="facts-strip" id="facts"></div></div>
+    <section id="projects" class="section wrap"><div class="section-top"><div><p class="eyebrow">01 / EXPLORER</p><h2>La pratique, <span>en projets.</span></h2></div><p class="section-intro">Des problématiques concrètes, une démarche<br class="desktop-break"> et les choix techniques qui font la différence.</p></div><div id="sample-notice" class="sample-notice" hidden><span aria-hidden="true">◇</span><p><b>Portfolio en cours de personnalisation.</b> Les fiches marquées « Exemple » illustrent la présentation ; elles ne décrivent pas encore mes réalisations.</p></div><div class="project-toolbar"><div id="filters" class="filters" role="group" aria-label="Filtrer les projets"></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Python, SQL, projet…" aria-label="Rechercher un projet"></label></div><div class="results-row"><p id="result-count" role="status" aria-live="polite"></p><button class="editor-only button small" data-action="add-project" hidden>+ Ajouter un projet</button></div><div id="projects-grid" class="projects-grid"></div></section>
+    <section id="stages" class="section experience-section"><div class="wrap experience-layout"><div class="experience-intro"><p class="eyebrow">02 / SUR LE TERRAIN</p><h2>Apprendre.<br>Contribuer.<br><span>Progresser.</span></h2><p id="experience-intro">Deux stages réalisés pendant mon parcours. Un premier regard sur la réalité des projets en entreprise.</p><button class="editor-only button small" data-action="add-stage" hidden>+ Ajouter un stage</button></div><div id="stages-list" class="timeline"></div></div></section>
+    <section id="skills" class="section wrap"><div class="section-top"><div><p class="eyebrow">03 / BOÎTE À OUTILS</p><h2>Une culture <span>data.</span></h2></div><p class="section-intro">Les technologies de mon parcours<br class="desktop-break"> et celles que je souhaite approfondir.</p></div><div id="skills-grid" class="skills-grid"></div></section>
+    <section id="about" class="section wrap about-layout"><div><p class="eyebrow">04 / MON PARCOURS</p><h2>Curieux de nature.<br><span>Orienté solutions.</span></h2><p id="about-description" class="about-description"></p><div class="direction"><span class="eyebrow">MON PROCHAIN CHAPITRE</span><p id="target-role"></p></div></div><div><div id="education-list"></div><div id="certifications-list"></div></div></section>
+    <section id="contact" class="wrap contact-section"><div class="contact-panel"><div><p class="eyebrow">ET SI ON TRAVAILLAIT ENSEMBLE ?</p><h2>Parlons de votre<br>prochain projet <em>data.</em></h2><p id="contact-intro"></p></div><div class="contact-actions" id="contact-actions"></div><span class="contact-decoration" aria-hidden="true">↗</span></div></section>
+  </main>
+  <footer class="wrap footer"><span>© <span id="year"></span> <span id="footer-name">Saïd</span><span class="footer-separator">/</span>Portfolio Data & IA</span><div><a href="#home">Retour en haut ↑</a><a id="editor-link" href="?edit=1">Personnaliser</a></div></footer>
+  <dialog id="detail-dialog" aria-labelledby="detail-title"><div class="dialog-header"><span class="eyebrow">DANS LES COULISSES</span><button class="icon-button" data-action="close-detail" aria-label="Fermer les détails">×</button></div><div id="detail-content"></div></dialog>
+  <dialog id="edit-dialog" aria-labelledby="edit-title"><div class="dialog-header"><h2 id="edit-title">Modifier</h2><button class="icon-button" data-action="close-edit" aria-label="Fermer le formulaire">×</button></div><div id="edit-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p class="noscript">Activez JavaScript pour consulter les fiches de projets et personnaliser le portfolio. Saïd est étudiant en 5e année Big Data et IA à l’Université Internationale de Rabat et recherche un stage PFE en data engineering ou data analysis.</p></noscript>
+</body>
