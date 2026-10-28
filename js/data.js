@@ -232,12 +232,12 @@ const defaultPortfolioData = {
   "projects": [
     {
       "id": "maroc-digital-trust",
-      "title": "Maroc Digital Trust — Signature numérique des documents",
+      "title": "Document Signature Guard — Signature numérique des documents",
       "category": "security",
       "categoryLabel": "Cybersécurité & Documents",
       "academicYear": "Projet de système anti-falsification · Prototype",
       "summary": "Prototype Python de signature numérique des PDF : empreintes SHA-256, signatures ECDSA, QR codes et intégration PAdES. Traçabilité par journal d’audit et ancrage blockchain optionnel.",
-      "github": "https://github.com/saidoukadr-dataAnalyst/maroc-digital-trust",
+      "github": "https://github.com/saidoukadr-dataAnalyst/document-signature-guard",
       "demo": "",
       "technologies": [
         "Python",
