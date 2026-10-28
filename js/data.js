@@ -231,6 +231,34 @@ const defaultPortfolioData = {
   ],
   "projects": [
     {
+      "id": "maroc-digital-trust",
+      "title": "Maroc Digital Trust — Signature numérique des documents",
+      "category": "security",
+      "categoryLabel": "Cybersécurité & Documents",
+      "academicYear": "Projet de système anti-falsification · Prototype",
+      "summary": "Prototype Python de signature numérique des PDF : empreintes SHA-256, signatures ECDSA, QR codes et intégration PAdES. Traçabilité par journal d’audit et ancrage blockchain optionnel.",
+      "github": "https://github.com/saidoukadr-dataAnalyst/maroc-digital-trust",
+      "demo": "",
+      "technologies": [
+        "Python",
+        "ECDSA / SHA-256",
+        "pyHanko / PAdES",
+        "CustomTkinter",
+        "FastAPI",
+        "Celery / Redis",
+        "PyMuPDF"
+      ],
+      "fullDetails": {
+        "problem": "Explorer la protection des documents numériques contre la falsification et la traçabilité des opérations de signature.",
+        "dataset": "Documents PDF fournis localement par l’utilisateur. Aucun corpus public ni résultat de benchmark n’est publié.",
+        "methodology": "Calcul de l’empreinte du PDF original, signature ECDSA P-256, insertion d’un tampon avec QR code et intégration d’une signature PDF via pyHanko. Modules complémentaires : authentification bcrypt, TOTP, OCR/DLP et workflows d’approbation.",
+        "architecture": "PDF → SHA-256 → Signature ECDSA → Tampon et QR code → Module PAdES → PDF signé. Journal d’audit chaîné HMAC et ancrage optionnel sur Ethereum Sepolia ; API FastAPI avec tâches Celery / Redis.",
+        "metrics": "Prototype en développement : modules présents dans le dépôt, sans validation de bout en bout ni mesures de performance publiées. La blockchain distingue les modes simulation, dégradé et live.",
+        "keyLearnings": "Distinguer signature d’une empreinte, intégrité du PDF et confiance dans le certificat. La vérification actuelle du QR ne valide pas le contenu du PDF ni sa signature PAdES ; ces contrôles et les tests d’altération restent à compléter."
+      },
+      "isExample": false
+    },
+    {
       "id": "proj-1",
       "title": "Recherche documentaire avec un assistant RAG",
       "category": "genai",
