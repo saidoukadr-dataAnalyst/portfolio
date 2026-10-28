@@ -7,7 +7,7 @@ const $ = (id) => document.getElementById(id);
 const clone = (value) => JSON.parse(JSON.stringify(value));
 const escapeHTML = (value = "") => String(value ?? "").replace(/[&<>"']/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
 const normalize = (value) => String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-const categories = {bigdata:"Data Engineering",analysis:"Data Analysis",genai:"GenAI", "vision-nlp":"Vision & NLP",machinelearning:"Machine Learning"};
+const categories = {security:"Cybersécurité",bigdata:"Data Engineering",analysis:"Data Analysis",genai:"GenAI", "vision-nlp":"Vision & NLP",machinelearning:"Machine Learning"};
 const state = {data:clone(defaultPortfolioData), editor:new URLSearchParams(location.search).get("edit") === "1", filter:"all", query:"", step:0};
 let toastTimer;
 
@@ -113,7 +113,7 @@ function renderProjects() {
   const list = state.data.projects.filter(p => (state.filter === "all" || p.category === state.filter) && normalize([p.title,p.summary,p.categoryLabel,...p.technologies,...Object.values(p.fullDetails)].join(" ")).includes(search));
   $("result-count").textContent = `${list.length} projet${list.length>1?"s":""} affiché${list.length>1?"s":""} sur ${state.data.projects.length}`;
   $("projects-grid").innerHTML = list.map((p,i)=>{
-    const art = p.category === "bigdata" ? ["blue","SOURCE","PIPELINE","DATA"] : p.category === "genai" ? ["","DOCS","RAG","RÉPONSE"] : p.category === "analysis" ? ["","DATA","ANALYSE","INSIGHT"] : ["violet","DATA","MODÈLE","OUTPUT"];
+    const art = p.category === "security" ? ["violet","PDF","SIGNATURE","CONTRÔLE"] : p.category === "bigdata" ? ["blue","SOURCE","PIPELINE","DATA"] : p.category === "genai" ? ["","DOCS","RAG","RÉPONSE"] : p.category === "analysis" ? ["","DATA","ANALYSE","INSIGHT"] : ["violet","DATA","MODÈLE","OUTPUT"];
     return `<article class="project-card"><div class="project-art ${art[0]}" aria-hidden="true"><span class="art-label">${escapeHTML(categories[p.category] || p.categoryLabel)}</span><div class="diagram"><span class="diagram-node">${art[1]}</span><span class="diagram-link"></span><span class="diagram-node center">${art[2]}</span><span class="diagram-link"></span><span class="diagram-node">${art[3]}</span></div><span class="art-number">${String(i+1).padStart(2,"0")} / PROJECT</span></div><div class="project-body"><div class="card-category"><span>${escapeHTML(p.categoryLabel || categories[p.category] || p.category)}</span>${exampleBadge(p)}</div><h3>${escapeHTML(p.title)}</h3><p class="project-summary">${escapeHTML(p.summary)}</p>${tags(p.technologies.slice(0,4))}<div class="card-bottom"><button class="detail-button" data-action="detail-project" data-id="${escapeHTML(p.id)}" aria-label="Voir le projet : ${escapeHTML(p.title)}">Voir le projet <span aria-hidden="true">↗</span></button><div class="card-links">${externalLink(p.github,"Code")}${externalLink(p.demo,"Démo")}</div></div>${editControls("project",p.id)}</div></article>`;
   }).join("") || `<div class="empty-state"><p>${state.data.projects.length ? "Aucun projet ne correspond à votre recherche." : "Les projets seront ajoutés prochainement."}</p>${state.data.projects.length?'<button class="button small" data-action="reset-filters">Réinitialiser les filtres</button>':""}</div>`;
 }
